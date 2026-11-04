@@ -1,35 +1,22 @@
-// Widget : Stat Style 
-// Style : Stat widget with right top icon
-
-// import node module libraries
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Activity, Target, TrendingDown, Users } from 'react-feather';
 
-const StatRightTopIcon = props => {
-    const { info } = props;
-    return (
-        <Card>
-            <Card.Body>
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                    <div>
-                        <h4 className="mb-0">{info.title}</h4>
-                    </div>
-                    <div className="icon-shape icon-md bg-light-primary text-primary rounded-2">
-                        {info.icon}
-                    </div>
-                </div>
-                <div>
-                    <h1 className="fw-bold">{info.value}</h1>
-                    <p className="mb-0" dangerouslySetInnerHTML={{ __html: info.statInfo}}></p>
-                </div>
-            </Card.Body>
-        </Card>
-    )
-}
+const icons = { activity: Activity, target: Target, 'trending-down': TrendingDown, users: Users };
 
-// Typechecking With PropTypes
-StatRightTopIcon.propTypes = {
-    info: PropTypes.any.isRequired
+const StatRightTopIcon = ({ info }) => {
+	const Icon = icons[info.icon] || Activity;
+	const arrow = info.direction === 'up' ? '↑' : '↓';
+
+	return (
+		<article className="metric-card">
+			<div className={`metric-icon metric-icon-${info.tone}`}><Icon size={19} /></div>
+			<div className="metric-value">{info.value}<span>{info.unit}</span></div>
+			<div className="metric-label">{info.label}</div>
+			<div className="metric-context"><span className="positive">{info.change} {arrow}</span><span>{info.helper}</span></div>
+		</article>
+	);
 };
 
-export default StatRightTopIcon
+StatRightTopIcon.propTypes = { info: PropTypes.object.isRequired };
+
+export default StatRightTopIcon;

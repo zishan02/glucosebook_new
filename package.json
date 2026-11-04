@@ -1,6 +1,7 @@
 {
-  "name": "dashui-free-nextjs-admin-template",
-  "version": "1.1.1",
+  "name": "glucosebook-clinical-workspace",
+  "version": "0.1.0",
+  "description": "An extensible clinical dashboard for glucose monitoring teams.",
   "private": true,
   "author": {
     "name": "codescandy",
@@ -35,7 +36,6 @@
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.8",
     "next": "16.0.8",
-    "node-sass": "^9.0.0",
     "prism-react-renderer": "^2.4.1",
     "react": "19.2.1",
     "react-apexcharts": "^1.9.0",
