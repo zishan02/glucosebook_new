@@ -1,0 +1,57 @@
+export const dashboardResponse = {
+  meta: {
+    generatedAt: "2026-11-12T08:30:00+05:30",
+    range: "7d",
+    timezone: "Asia/Kolkata",
+  },
+  clinic: {
+    name: "Indiranagar Metabolic Clinic",
+    clinician: "Dr. Maya Rao",
+    initials: "MR",
+  },
+  metrics: [
+    { id: "active-patients", label: "Active patients", value: "248", change: "+12", context: "this month", tone: "blue" },
+    { id: "time-in-range", label: "Average time in range", value: "72%", change: "+4.2%", context: "vs prior week", tone: "teal" },
+    { id: "urgent-reviews", label: "Urgent reviews", value: "8", change: "3 new", context: "since yesterday", tone: "red" },
+    { id: "sensor-coverage", label: "Sensor coverage", value: "91%", change: "+1.8%", context: "across the clinic", tone: "amber" },
+  ],
+  glucoseSeries: [
+    { time: "12 am", glucose: 116 },
+    { time: "2 am", glucose: 108 },
+    { time: "4 am", glucose: 103 },
+    { time: "6 am", glucose: 112 },
+    { time: "8 am", glucose: 168 },
+    { time: "10 am", glucose: 142 },
+    { time: "12 pm", glucose: 184 },
+    { time: "2 pm", glucose: 156 },
+    { time: "4 pm", glucose: 132 },
+    { time: "6 pm", glucose: 149 },
+    { time: "8 pm", glucose: 192 },
+    { time: "10 pm", glucose: 138 },
+  ],
+  rangeDistribution: [
+    { label: "Very high", range: ">250 mg/dL", value: 4, tone: "bg-rose-600" },
+    { label: "High", range: "181–250 mg/dL", value: 15, tone: "bg-amber-500" },
+    { label: "In range", range: "70–180 mg/dL", value: 72, tone: "bg-emerald-500" },
+    { label: "Low", range: "54–69 mg/dL", value: 7, tone: "bg-sky-500" },
+    { label: "Very low", range: "<54 mg/dL", value: 2, tone: "bg-violet-500" },
+  ],
+  patients: [
+    { id: "PT-1042", name: "Ananya Iyer", initials: "AI", age: 34, glucose: 286, status: "Critical", trend: "Rising quickly", timeInRange: 41, updated: "8 min ago" },
+    { id: "PT-1038", name: "Rohan Mehta", initials: "RM", age: 52, glucose: 64, status: "Critical", trend: "Falling", timeInRange: 56, updated: "11 min ago" },
+    { id: "PT-0991", name: "Kavya Shah", initials: "KS", age: 28, glucose: 198, status: "Watch", trend: "Stable", timeInRange: 68, updated: "18 min ago" },
+    { id: "PT-1017", name: "Arjun Nair", initials: "AN", age: 61, glucose: 152, status: "Stable", trend: "Stable", timeInRange: 82, updated: "24 min ago" },
+    { id: "PT-0964", name: "Meera Kapoor", initials: "MK", age: 45, glucose: 176, status: "Watch", trend: "Rising", timeInRange: 71, updated: "31 min ago" },
+  ],
+  careQueue: [
+    { id: "CQ-1", patient: "Ananya Iyer", task: "Review overnight hyperglycaemia", due: "Now", priority: "Urgent", owner: "Dr. Rao" },
+    { id: "CQ-2", patient: "Rohan Mehta", task: "Call after recurrent low", due: "10:30 am", priority: "Urgent", owner: "Nurse Anil" },
+    { id: "CQ-3", patient: "Meera Kapoor", task: "Confirm meal-dose adjustment", due: "12:00 pm", priority: "Today", owner: "Dr. Rao" },
+    { id: "CQ-4", patient: "Kavya Shah", task: "Check sensor replacement", due: "2:00 pm", priority: "Today", owner: "Support" },
+  ],
+  alerts: [
+    { id: "AL-1", title: "Severe hypoglycaemia", detail: "Rohan Mehta · 54 mg/dL for 22 minutes", severity: "Critical", time: "11 min ago" },
+    { id: "AL-2", title: "Sustained high glucose", detail: "Ananya Iyer · above 250 mg/dL for 90 minutes", severity: "High", time: "18 min ago" },
+    { id: "AL-3", title: "Sensor signal loss", detail: "Kavya Shah · no reading for 35 minutes", severity: "Technical", time: "35 min ago" },
+  ],
+};
